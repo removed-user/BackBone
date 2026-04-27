@@ -4,8 +4,12 @@
   inputs = {
     flake-parts.url = "github:hercules-ci/flake-parts";
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-    systemd_source.url = "github:systemd/systemd";
-    systemd_liberated.url = "github:systemd/systemd";
+    systemd_source = { url = "github:systemd/systemd"; flake = false;};
+#systemd_liberated = { url = "github:systemd/systemd"; flake = false;};
+systemd_liberated_patchfile pkgs.fetchurl {
+  url = "";
+  hash = "sha256-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=";
+}; url = "github:systemd/systemd"; flake = false;};
 
   };
 
