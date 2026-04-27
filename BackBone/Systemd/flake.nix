@@ -7,9 +7,9 @@
     systemd_source = { url = "github:systemd/systemd"; flake = false;};
 #systemd_liberated = { url = "github:systemd/systemd"; flake = false;};
 systemd_liberated_patchfile pkgs.fetchurl {
-  url = "";
-  hash = "sha256-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=";
-}; url = "github:systemd/systemd"; flake = false;};
+  url = "https://raw.githubusercontent.com/Jeffrey-Sardina/systemd-suite/main/main.patch";
+  hash = "";
+}; url = "github:Jeffrey-Sardina/systemd-suite"; flake = false;};
 
   };
 
@@ -37,3 +37,4 @@ systemd_liberated_patchfile pkgs.fetchurl {
       };
     };
 }
+
