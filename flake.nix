@@ -47,7 +47,7 @@
       };
       BackBone = {
         Kernel ={
-          path = ./BackBone/Kernel
+          path = ./BackBone/Kernel;
             description = ''
                 A Kernel Config (upcoming);
                 - Minimal 
@@ -56,7 +56,7 @@
 
         }
         Systemd = {
-          path = ./BackBone/Systemd
+          path = ./BackBone/Systemd;
             decription = ''
              The systemd package, init, but with a somewhat reasonable scope
             - Includes custom feature-set
