@@ -52,7 +52,7 @@
                 A Kernel Config (upcoming);
                 - Minimal 
                 - X scheduler
-            ''
+            '';
 
         }
         Systemd = {
@@ -61,7 +61,7 @@
              The systemd package, init, but with a somewhat reasonable scope
             - Includes custom feature-set
             - all (current) meson options
-          ''
+          '';
         };
       };
       flakeModules = {
