@@ -54,7 +54,7 @@
                 - X scheduler
             '';
 
-        }
+        };
         Systemd = {
           path = ./BackBone/Systemd;
             decription = ''
