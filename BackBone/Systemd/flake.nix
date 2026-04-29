@@ -1,16 +1,13 @@
 {
   description = "Description for the project";
 
+#systemd_liberated = { url = "github:Jeffrey-Sardina/systemd"; flake = false;};
+  #
   inputs = {
     flake-parts.url = "github:hercules-ci/flake-parts";
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     systemd_source = { url = "github:systemd/systemd"; flake = false;};
-#systemd_liberated = { url = "github:systemd/systemd"; flake = false;};
-systemd_liberated_patchfile pkgs.fetchurl {
-  url = "https://raw.githubusercontent.com/Jeffrey-Sardina/systemd-suite/main/main.patch";
-  hash = "";
-}; url = "github:Jeffrey-Sardina/systemd-suite"; flake = false;};
-
+sd-liberated_patch = { url = "github:Jeffrey-Sardina/systemd-suite";flake = false;};
   };
 
   outputs = inputs@{ flake-parts, ... }:
@@ -36,5 +33,5 @@ systemd_liberated_patchfile pkgs.fetchurl {
 
       };
     };
+  };
 }
-

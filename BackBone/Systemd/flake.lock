@@ -1,0 +1,95 @@
+{
+  "nodes": {
+    "flake-parts": {
+      "inputs": {
+        "nixpkgs-lib": "nixpkgs-lib"
+      },
+      "locked": {
+        "lastModified": 1775087534,
+        "narHash": "sha256-91qqW8lhL7TLwgQWijoGBbiD4t7/q75KTi8NxjVmSmA=",
+        "owner": "hercules-ci",
+        "repo": "flake-parts",
+        "rev": "3107b77cd68437b9a76194f0f7f9c55f2329ca5b",
+        "type": "github"
+      },
+      "original": {
+        "owner": "hercules-ci",
+        "repo": "flake-parts",
+        "type": "github"
+      }
+    },
+    "nixpkgs": {
+      "locked": {
+        "lastModified": 1776877367,
+        "narHash": "sha256-EHq1/OX139R1RvBzOJ0aMRT3xnWyqtHBRUBuO1gFzjI=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "0726a0ecb6d4e08f6adced58726b95db924cef57",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "ref": "nixos-unstable",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "nixpkgs-lib": {
+      "locked": {
+        "lastModified": 1774748309,
+        "narHash": "sha256-+U7gF3qxzwD5TZuANzZPeJTZRHS29OFQgkQ2kiTJBIQ=",
+        "owner": "nix-community",
+        "repo": "nixpkgs.lib",
+        "rev": "333c4e0545a6da976206c74db8773a1645b5870a",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-community",
+        "repo": "nixpkgs.lib",
+        "type": "github"
+      }
+    },
+    "root": {
+      "inputs": {
+        "flake-parts": "flake-parts",
+        "nixpkgs": "nixpkgs",
+        "sd-liberated_patch": "sd-liberated_patch",
+        "systemd_source": "systemd_source"
+      }
+    },
+    "sd-liberated_patch": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1777306660,
+        "narHash": "sha256-aPJlXdSDS4doJzwNIcf5414huBt5JJcaP36wBZtSEzE=",
+        "owner": "Jeffrey-Sardina",
+        "repo": "systemd-suite",
+        "rev": "7d6d97e7376bf43fe757d1bff13d675cd31934eb",
+        "type": "github"
+      },
+      "original": {
+        "owner": "Jeffrey-Sardina",
+        "repo": "systemd-suite",
+        "type": "github"
+      }
+    },
+    "systemd_source": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1777317248,
+        "narHash": "sha256-J65+YGpq6IYQ6aYAe3Ur1EV2lfrdXsi24L47b+/16qs=",
+        "owner": "systemd",
+        "repo": "systemd",
+        "rev": "181a9f65a7cf9059da0f2a44e2152d7636446b33",
+        "type": "github"
+      },
+      "original": {
+        "owner": "systemd",
+        "repo": "systemd",
+        "type": "github"
+      }
+    }
+  },
+  "root": "root",
+  "version": 7
+}
