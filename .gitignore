@@ -4,3 +4,4 @@ result-*
 
 # pre-commit-hooks.nix
 .pre-commit-config.yaml
+.git/hooks/*
