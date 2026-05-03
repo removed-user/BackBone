@@ -27,12 +27,12 @@
           A minimal flake using flake-parts.
         '';
       };
-      unfree = {
-        path = ./template/unfree;
-        description = ''
-          A minimal flake using flake-parts importing nixpkgs with the unfree option.
-        '';
-      };
+      # unfree = {
+      #   path = ./template/unfree;
+      #   description = ''
+      #     A minimal flake using flake-parts importing nixpkgs with the unfree option.
+      #   '';
+      # };
       package = {
         path = ./template/package;
         description = ''
@@ -45,21 +45,23 @@
       };
     };
     BackBone = {
-      Kernel = {
-        path = ./BackBone/Kernel;
-        description = ''
-          A Kernel Config (upcoming);
-          - Minimal
-          - X scheduler
-        '';
-      };
-      Systemd = {
-        path = ./BackBone/Systemd;
-        decription = ''
-           The systemd package, init, but with a somewhat reasonable scope
-          - Includes custom feature-set
-          - all (current) meson options
-        '';
+      default = {
+        Kernel = {
+          path = ./BackBone/Kernel;
+          description = ''
+            A Kernel Config (upcoming);
+            - Minimal
+            - X scheduler
+          '';
+        };
+        Systemd = {
+          path = ./BackBone/Systemd;
+          decription = ''
+             The systemd package, init, but with a somewhat reasonable scope
+            - Includes custom feature-set
+            - all (current) meson options
+          '';
+        };
       };
     };
     flakeModules = {
