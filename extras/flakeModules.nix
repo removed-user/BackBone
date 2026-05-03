@@ -1,25 +1,34 @@
-{ self, lib, flake-parts-lib, moduleLocation, ... }:
-let
-  inherit (lib)
+{
+  self,
+  lib,
+  flake-parts-lib,
+  moduleLocation,
+  ...
+}: let
+  inherit
+    (lib)
     mapAttrs
     mkOption
     types
     ;
-  inherit (flake-parts-lib)
+  inherit
+    (flake-parts-lib)
     mkAliasOptionModule
     ;
 
   flakeModulesOption = mkOption {
     type = types.lazyAttrsOf types.deferredModule;
-    default = { };
+    default = {};
     apply = mapAttrs (k: v: {
       _file = "${toString moduleLocation}#flakeModules.${k}";
       key = "${toString moduleLocation}#flakeModules.${k}";
-      imports = [ v ];
+      imports = [v];
       _class = "flake";
     });
     description = ''
       flake-parts modules for use by other flakes.
+
+      AKA: This nix code is used for creating a nix module that others can import.
 
       If the flake defines only one module, it should be `flakeModules.default`.
 
@@ -30,13 +39,12 @@ let
       See [Dogfood a Reusable Module](../dogfood-a-reusable-module.md) for details and an example.
     '';
   };
-in
-{
+in {
   options = {
     flake = mkOption {
       type = types.submoduleWith {
         modules = [
-          (mkAliasOptionModule [ "flakeModule" ] [ "flakeModules" "default" ])
+          (mkAliasOptionModule ["flakeModule"] ["flakeModules" "default"])
           {
             options.flakeModules = flakeModulesOption;
           }
