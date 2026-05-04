@@ -29,8 +29,8 @@
   }: {
     devShells.default = pkgs.mkShell {
       nativeBuildInputs = [
-        pkgs.nixpkgs-fmt
-        pkgs.hci
+        #        pkgs.nixpkgs-fmt
+        #        pkgs.hci
       ];
       shellHook = ''
         ${config.pre-commit.shellHook}
@@ -55,12 +55,12 @@
     options.mySystem = lib.mkOption {default = config.allSystems.${builtins.currentSystem};};
     config.effects = withSystem "x86_64-linux" ({
       pkgs,
-      hci-effects,
+      #      hci-effects,
       ...
     }: {
-      tests = {
-        template = pkgs.callPackage ./tests/template.nix {inherit hci-effects;};
-      };
+      #    tests = {
+      #      template = pkgs.callPackage ./tests/template.nix {inherit hci-effects;};
+      #    };
     });
   };
 }

@@ -15,26 +15,26 @@
         else "";
     };
     templates = {
-      default = {
-        path = ./template/default;
-        description = ''
-          A minimal flake using flake-parts.
-        '';
-      };
-      multi-module = {
-        path = ./template/multi-module;
-        description = ''
-          A minimal flake using flake-parts.
-        '';
-      };
+      #      default = {
+      #        path = ./template/default;
+      #        description = ''
+      #          A minimal flake using flake-parts.
+      #        '';
+      #      };
+      #      multi-module = {
+      #        path = ./template/multi-module;
+      #        description = ''
+      #          A minimal flake using flake-parts.
+      #        '';
+      #      };
       # unfree = {
       #   path = ./template/unfree;
       #   description = ''
       #     A minimal flake using flake-parts importing nixpkgs with the unfree option.
       #   '';
       # };
-      package = {
-        path = ./template/package;
+      packages = {
+        path = ./Packages;
         description = ''
           A flake with a simple package:
           - Nixpkgs
