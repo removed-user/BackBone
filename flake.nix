@@ -45,23 +45,21 @@
       };
     };
     BackBone = {
-      default = {
-        Kernel = {
-          path = ./BackBone/Kernel;
-          description = ''
-            A Kernel Config (upcoming);
-            - Minimal
-            - X scheduler
-          '';
-        };
-        Systemd = {
-          path = ./BackBone/Systemd;
-          decription = ''
-             The systemd package, init, but with a somewhat reasonable scope
-            - Includes custom feature-set
-            - all (current) meson options
-          '';
-        };
+      Kernel = {
+        path = ./BackBone/Kernel;
+        description = ''
+          A Kernel Config (upcoming);
+          - Minimal
+          - X scheduler
+        '';
+      };
+      Systemd = {
+        path = ./BackBone/Systemd;
+        decription = ''
+           The systemd package, init, but with a somewhat reasonable scope
+          - Includes custom feature-set
+          - all (current) meson options
+        '';
       };
     };
     flakeModules = {
