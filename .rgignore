@@ -1,3 +1,10 @@
-data/retained/*
+/data/retained/*
 /BackBone/
 /data/used-projects/
+
+/examples/shell-environments/flake.lock
+/examples/project-commands/flake.lock
+/BackBone/Systemd/flake.lock
+/dev/flake.lock
+/flake.lock
+/dev/tests/
