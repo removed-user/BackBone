@@ -8,3 +8,5 @@
 /dev/flake.lock
 /flake.lock
 /dev/tests/
+/Packages/*/flake.lock
+/Packages/flake.lock

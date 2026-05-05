@@ -11,7 +11,7 @@
       imports = [
         ./hello/flake-module.nix
       ];
-      systems = ["x86_64-linux" "aarch64-darwin"];
+      systems = ["x86_64-linux"];
       perSystem = {
         config,
         self',
@@ -22,7 +22,7 @@
         # module parameters provide easy access to attributes of the same
         # system.
 
-        packages.figlet = inputs'.nixpkgs.legacyPackages.figlet;
+        packages.lix = inputs'.nixpkgs.legacyPackages.lix;
       };
       flake = {
         # The usual flake attributes can be defined here, including system-
