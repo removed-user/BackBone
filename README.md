@@ -1,3 +1,7 @@
+# This was going to be the backbone of my nix-config, but nix actually has an aweful ecosystem.
+## Practically a walled-garden, **everything must be nix** mentality, where you have to change your OS, to use modules to **configure the language**
+
+
 How to make your own nixpkgs + lib + your own OS + plus compile every package you use from source every single time, perfectly configured, for you
 ... without errors, and still have time to eat 
 

@@ -33,16 +33,6 @@
       #     A minimal flake using flake-parts importing nixpkgs with the unfree option.
       #   '';
       # };
-      packages = {
-        path = ./Packages;
-        description = ''
-          A flake with a simple package:
-          - Nixpkgs
-          - callPackage
-          - src with fileset
-          - a check with runCommand
-        '';
-      };
     };
     BackBone = {
       Kernel = {
@@ -61,6 +51,17 @@
           - all (current) meson options
         '';
       };
+      packages = {
+        imports = [./Packages/flake.nix];
+        path = ./Packages;
+        description = ''
+          A flake with a simple package:
+          - Nixpkgs
+          - callPackage
+          - src with fileset
+          - a check with runCommand
+        '';
+      };
     };
     flakeModules = {
       easyOverlay = ./extras/easyOverlay.nix;
@@ -71,15 +72,27 @@
     };
   in
     lib.mkFlake {inherit inputs;} {
-      systems = [];
-      imports = [flakeModules.partitions];
-      partitionedAttrs.checks = "dev";
-      partitionedAttrs.devShells = "dev";
-      partitionedAttrs.herculesCI = "dev";
+      systems = ["x86_64-linux"];
+      imports = [
+        inputs.flake-parts.flakeModules.flakeModules
+        inputs.flake-parts.flakeModules.modules
+        inputs.flake-parts.flakeModules.debug
+        inputs.flake-parts.flakeModules.partitions
+      ];
 
-      partitions.dev.extraInputsFlake = ./dev;
+      disabledModules = [
+        inputs.flake-parts.flakeModules.nixosModules
+        inputs.flake-parts.flakeModules.nixosConfigurations
+        inputs.flake-parts.flakeModules.apps
+        inputs.flake-parts.flakeModules.devShells
+        inputs.flake-parts.flakeModules.formatter
+      ];
+      # partitionedAttrs.checks = "dev";
+      # partitionedAttrs.herculesCI = "dev";
+      # partitions.dev.extraInputsFlake = ./dev;
       partitions.dev.module = {
         imports = [./dev/flake-module.nix];
+        partitionedAttrs.devShells = "dev";
       };
       flake = {
         inherit lib templates flakeModules BackBone;
